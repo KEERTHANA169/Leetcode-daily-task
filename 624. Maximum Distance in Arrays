@@ -1,0 +1,30 @@
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+
+import java.util.List;
+import java.util.function.Consumer;
+
+public class Solution {
+    public int maxDistance(List<List<Integer>> arrays) {
+        var minMax = new MinMax();
+
+        arrays.forEach(minMax);
+
+        return minMax.output;
+    }
+
+    private static class MinMax implements Consumer<List<Integer>> {
+        int output = 0;
+        int mn = 10_001, mx = -mn;
+
+        @Override
+        public void accept(List<Integer> A) {
+            int x = A.getFirst(), y = A.getLast();
+
+            output = max(output, max(mx - x, y - mn));
+
+            mn = min(mn, x);
+            mx = max(mx, y);
+        }
+    }
+}
