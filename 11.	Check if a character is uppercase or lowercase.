@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner s = new Scanner(System.in);
+        char letter=s.next().charAt(0);
+        if(Character.isLetter(letter))
+        {
+            if(Character.isUpperCase(letter))
+            {
+                System.out.println(letter+" is uppercase.");
+            }
+            else if(Character.isLowerCase(letter))
+            {
+                System.out.println(letter+" is lowercase");
+            }
+        }
+        else
+            {
+                System.out.println("Not an alphabet");
+            }
+        s.close();
+    }
+}
