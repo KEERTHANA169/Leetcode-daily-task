@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        int lowerBound = 10; // example lower bound
+        int upperBound = 20; // example upper bound
+        
+        int number = s.nextInt();
+        
+        if (number >= lowerBound && number <= upperBound) {
+            System.out.println(number + " lies within the range.");
+        } else {
+            System.out.println(number + " does not lie within the range.");
+        }
+        
+        s.close();
+    }
+}
