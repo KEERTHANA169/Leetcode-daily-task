@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int year = s.nextInt();
+
+        if (year >= 13 && year <= 19) {
+            System.out.println("Teenager");
+        } else {
+            System.out.println("Not a Teenager");
+        }
+
+        s.close();
+    }
+}
