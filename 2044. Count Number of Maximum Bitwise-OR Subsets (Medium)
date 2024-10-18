@@ -1,0 +1,23 @@
+class Solution {
+    public int countMaxOrSubsets(int[] nums) {
+        int max=0,tmp=0,count=0;
+        //The maximum bitwise-OR is the bitwise-OR of the whole array
+        for(int i=0;i<nums.length;i++){
+            max=max|nums[i];
+        }
+        
+        for(int i=0;i<(1<<nums.length);i++){
+            tmp=0;
+            for(int j=0;j<nums.length;j++){
+                if((i&(1<<j))>0){
+                    tmp=tmp|nums[j];
+                }
+            }
+            if(tmp==max){
+                count++;
+            }
+        }
+        
+        return count;
+    }
+}
